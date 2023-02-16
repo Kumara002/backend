@@ -2,6 +2,8 @@ const express=require("express");
 const mongoose=require("mongoose");
 const bodyParser=require("body-parser")
 
+const port=5000 || process.env.PORT
+
 const app=express();
 
 mongoose.set('strictQuery', true);
@@ -77,4 +79,4 @@ app.get("*",(req,res)=>{
     res.sendStatus(404)
 })
 
-app.listen(5000,()=>console.log("connected successfully"));
+app.listen(port,()=>console.log("connected successfully"));
